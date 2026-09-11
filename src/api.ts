@@ -1,4 +1,4 @@
-export const DEFAULT_API_BASE = "";
+export const DEFAULT_API_BASE = "https://60s.ssjj9855.workers.dev/v2";
 
 export type ApiCategory =
 	| "periodic"
