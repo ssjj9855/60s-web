@@ -499,10 +499,7 @@ export function App() {
 	);
 	const [serviceWorkerUpdate, setServiceWorkerUpdate] =
 		useState<ServiceWorkerRegistration | null>(null);
-	const [showApiGuide, setShowApiGuide] = useState(() => {
-		if (typeof window === "undefined") return false;
-		return !apiBase.trim();
-	});
+	const [showApiGuide, setShowApiGuide] = useState(false);
 	const hasApiBase = Boolean(apiBase.trim());
 	const hasSearchQuery = Boolean(query.trim());
 	const resolvedColorTheme =
@@ -604,9 +601,7 @@ export function App() {
 		[maoyan.data],
 	);
 
-	useEffect(() => {
-		writeStoredValue(STORAGE_KEYS.apiBase, apiBase);
-	}, [apiBase]);
+
 
 	useEffect(() => {
 		if (!apiBase.trim()) return;
