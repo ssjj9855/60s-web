@@ -287,12 +287,7 @@ function normalizeSettingsState(value: unknown): SettingsState {
 }
 
 function readInitialApiBase() {
-	const value = readStoredValue(STORAGE_KEYS.apiBase, DEFAULT_API_BASE);
-	try {
-		return value.trim() ? normalizeApiBaseInput(value) : DEFAULT_API_BASE;
-	} catch {
-		return value;
-	}
+    return DEFAULT_API_BASE;
 }
 
 function normalizeAccentTheme(value: unknown): AccentThemeState {
